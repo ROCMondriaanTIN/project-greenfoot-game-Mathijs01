@@ -10,7 +10,17 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-
+    GreenfootImage p1_walk01 = new GreenfootImage("p1_walk01.png"); 
+    GreenfootImage p1_walk02 = new GreenfootImage("p1_walk02.png"); 
+    GreenfootImage p1_walk03 = new GreenfootImage("p1_walk03.png"); 
+    GreenfootImage p1_walk04 = new GreenfootImage("p1_walk04.png"); 
+    GreenfootImage p1_walk05 = new GreenfootImage("p1_walk05.png"); 
+    GreenfootImage p1_walk06 = new GreenfootImage("p1_walk06.png"); 
+    GreenfootImage p1_walk07 = new GreenfootImage("p1_walk07.png"); 
+    GreenfootImage p1_walk08 = new GreenfootImage("p1_walk08.png"); 
+    
+    
+    public int frame = 1;
     public Hero() {
         super();
         gravity = 9.8;
@@ -37,7 +47,51 @@ public class Hero extends Mover {
             }
         }
     }
-
+    public void animate()
+    
+    {   
+        if(frame == 1)
+        {
+            setImage(p1_walk01);
+            frame = 2;
+        }
+        else if (frame == 2)
+        {
+            setImage(p1_walk02);
+            frame = 3;
+        }
+         else if (frame == 3)
+        {
+            setImage(p1_walk03);
+            frame = 4;
+        }
+         else if (frame == 4)
+        {
+            setImage(p1_walk04);
+            frame = 5;
+        }
+         else if (frame == 5)
+        {
+            setImage(p1_walk05);
+            frame = 6;
+        }
+         else if (frame == 6)
+        {
+            setImage(p1_walk06);
+            frame = 7;
+        }
+         else if (frame == 7)
+        {
+            setImage(p1_walk07);
+            frame = 8;
+        }
+         else if (frame == 8)
+        {
+            setImage(p1_walk08);
+            frame = 1;
+        }
+    }
+    
     public void handleInput() {
         if (Greenfoot.isKeyDown("up")) {
             velocityY = -10;
@@ -47,6 +101,7 @@ public class Hero extends Mover {
             velocityX = -2;
         } else if (Greenfoot.isKeyDown("right")) {
             velocityX = 2;
+            animate();
         }
     }
 

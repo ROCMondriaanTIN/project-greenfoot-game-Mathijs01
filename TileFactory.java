@@ -15,7 +15,7 @@ public class TileFactory {
         Tile tile;
         switch (mapIcon) {
             case 0:
-                tile = new Tile("box.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Tile("grass.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 break;
             case 1:
@@ -35,12 +35,12 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;
             case 5:
-                tile = new Tile("bridgeLogs.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Tile("grassCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.getImage().mirrorVertically();
                 tile.isSolid = true;
                 break;
             case 6:
-                tile = new Tile("grassCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Tile(".png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 tile.isSolid = true;
                 break;
             case 7:
@@ -69,6 +69,12 @@ public class TileFactory {
                 break;
             case 14:
                 tile = new Tile("signRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                break;
+                case 20:
+                tile = new Tile("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                break;
+                case 21:
+                tile = new Tile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
             default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
