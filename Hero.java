@@ -1,4 +1,5 @@
 
+
 import greenfoot.*;
 
 /**
@@ -18,7 +19,13 @@ public class Hero extends Mover {
     GreenfootImage p1_walk06 = new GreenfootImage("p1_walk06.png"); 
     GreenfootImage p1_walk07 = new GreenfootImage("p1_walk07.png"); 
     GreenfootImage p1_walk08 = new GreenfootImage("p1_walk08.png"); 
-    
+    GreenfootImage p1_walk12 = new GreenfootImage("p1_walk12.png");
+    GreenfootImage p1_walk13 = new GreenfootImage("p1_walk13.png");
+    GreenfootImage p1_walk14 = new GreenfootImage("p1_walk14.png");
+    GreenfootImage p1_walk15 = new GreenfootImage("p1_walk15.png");
+    GreenfootImage p1_walk16 = new GreenfootImage("p1_walk16.png");
+    GreenfootImage p1_walk17 = new GreenfootImage("p1_walk17.png");
+    GreenfootImage p1_walk18 = new GreenfootImage("p1_walk18.png");
     
     public int frame = 1;
     public Hero() {
@@ -91,6 +98,44 @@ public class Hero extends Mover {
             frame = 1;
         }
     }
+    public void animation()
+    {
+        if(frame == 1)
+        {
+            setImage(p1_walk12);
+            frame = 2;
+        }
+         else if (frame == 2)
+        {
+            setImage(p1_walk13);
+            frame = 3;
+        }
+         else if (frame == 3)
+        {
+            setImage(p1_walk14);
+            frame = 4;
+        }
+         else if (frame == 4)
+        {
+            setImage(p1_walk15);
+            frame = 5;
+        }
+         else if (frame == 5)
+        {
+            setImage(p1_walk16);
+            frame = 6;
+        }
+         else if (frame == 6)
+        {
+            setImage(p1_walk17);
+            frame = 7;
+        }
+         else if (frame == 7)
+        {
+            setImage(p1_walk18);
+            frame = 1;
+        }
+    }
     
     public void handleInput() {
         if (Greenfoot.isKeyDown("up")) {
@@ -99,6 +144,7 @@ public class Hero extends Mover {
 
         if (Greenfoot.isKeyDown("left")) {
             velocityX = -5;
+            animation();
         } else if (Greenfoot.isKeyDown("right")) {
             velocityX = 5;
             animate();

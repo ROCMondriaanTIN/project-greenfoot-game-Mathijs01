@@ -1,21 +1,23 @@
-
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- *
- * @author R. Springer
+ * Write a description of class enemy2 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Enemy extends Mover {
-
+public class enemy2 extends Mover
+{
+    
     private int walkRange;
     private int xMin;
     private int xMax;
     private boolean firstAct;
     private int speed;
 
-    public Enemy() {
+    public enemy2() {
         super();
-        setImage("pokerMad.png");
+        setImage("");
         getImage().mirrorHorizontally();
         walkRange = 100;
         firstAct = true;
@@ -45,4 +47,5 @@ public class Enemy extends Mover {
             getImage().mirrorHorizontally();
         }
     }
+}
 }
