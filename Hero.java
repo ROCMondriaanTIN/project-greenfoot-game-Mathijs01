@@ -98,9 +98,9 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("left")) {
-            velocityX = -2;
+            velocityX = -5;
         } else if (Greenfoot.isKeyDown("right")) {
-            velocityX = 2;
+            velocityX = 5;
             animate();
         }
     }
