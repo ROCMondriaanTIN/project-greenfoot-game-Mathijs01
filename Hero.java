@@ -11,6 +11,9 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+    int oldY;
+    boolean canJump = true;
+    
     GreenfootImage p1_walk01 = new GreenfootImage("p1_walk01.png"); 
     GreenfootImage p1_walk02 = new GreenfootImage("p1_walk02.png"); 
     GreenfootImage p1_walk03 = new GreenfootImage("p1_walk03.png"); 
@@ -38,6 +41,7 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        
         handleInput();
         
         velocityX *= drag;
@@ -53,7 +57,17 @@ public class Hero extends Mover {
                 break;
             }
         }
+        
+        if(oldY < getY() || oldY > getY()) {
+            canJump = false;
+        }
+        else
+        {
+            canJump = true;
+        }
+        if(Greenfoot.isKeyDown("up") == false)  oldY = getY();
     }
+    
     public void animate()
     
     {   
@@ -138,8 +152,8 @@ public class Hero extends Mover {
     }
     
     public void handleInput() {
-        if (Greenfoot.isKeyDown("up")) {
-            velocityY = -10;
+        if (Greenfoot.isKeyDown("up") && canJump == true) {
+            velocityY = -15;
         }
 
         if (Greenfoot.isKeyDown("left")) {
@@ -148,6 +162,14 @@ public class Hero extends Mover {
         } else if (Greenfoot.isKeyDown("right")) {
             velocityX = 5;
             animate();
+        }
+        else 
+        {
+            
+        }
+        if(Greenfoot.isKeyDown("down"))
+        {
+            setImage("p1_duck.png");
         }
     }
 

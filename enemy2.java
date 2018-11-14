@@ -17,7 +17,7 @@ public class enemy2 extends Mover
 
     public enemy2() {
         super();
-        setImage("");
+        setImage("slimeWalk1.png");
         getImage().mirrorHorizontally();
         walkRange = 100;
         firstAct = true;
@@ -48,4 +48,4 @@ public class enemy2 extends Mover
         }
     }
 }
-}
+
