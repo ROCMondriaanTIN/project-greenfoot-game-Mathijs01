@@ -7,13 +7,13 @@ import greenfoot.*;
  * @author R. Springer
  */
 public class Hero extends Mover {
-
     private final double gravity;
     private final double acc;
     private final double drag;
+    public boolean BrownCoin;
     int oldY;
     boolean canJump = true;
-    
+    //boolean BrownCoin = true;
     GreenfootImage p1_walk01 = new GreenfootImage("p1_walk01.png"); 
     GreenfootImage p1_walk02 = new GreenfootImage("p1_walk02.png"); 
     GreenfootImage p1_walk03 = new GreenfootImage("p1_walk03.png"); 
@@ -57,7 +57,7 @@ public class Hero extends Mover {
                 break;
             }
         }
-        
+        /*
         if(oldY < getY() || oldY > getY()) {
             canJump = false;
         }
@@ -66,6 +66,14 @@ public class Hero extends Mover {
             canJump = true;
         }
         if(Greenfoot.isKeyDown("up") == false)  oldY = getY();
+        */
+    }
+    
+    public boolean onGround()
+    {
+        Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
+        Tile tile = (Tile) under;
+        return tile != null && tile.isSolid == true;
     }
     
     public void animate()
@@ -152,7 +160,7 @@ public class Hero extends Mover {
     }
     
     public void handleInput() {
-        if (Greenfoot.isKeyDown("up") && canJump == true) {
+        if (Greenfoot.isKeyDown("up") && onGround()) {
             velocityY = -15;
         }
 
@@ -171,7 +179,28 @@ public class Hero extends Mover {
         {
             setImage("p1_duck.png");
         }
+        
     }
+    
+       public void level1()
+       
+       {
+           for(Actor door:getIntersectingObjects(Door.class))
+           {
+               if(BrownCoin==true)
+               {
+                   if (door == null)
+                   {
+                        Greenfoot.setWorld(new level2());
+                       String ActieveWereld="level2";
+                       return;
+                       
+                    }
+               }
+               break;
+           }
+       }
+    
 
     public int getWidth() {
         return getImage().getWidth();

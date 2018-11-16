@@ -376,15 +376,15 @@ case 89:
    break;
 case 90:
    tile = new Tile("liquidLava.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-   tile.isSolid = true;
+   tile.isSolid = false;
    break;
 case 91:
    tile = new Tile("liquidLavaTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-   tile.isSolid = true;
+   tile.isSolid = false;
    break;
 case 92:
    tile = new Tile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-   tile.isSolid = true;
+   tile.isSolid = false;
    break;
 case 93:
    tile = new Tile("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -396,7 +396,7 @@ case 94:
    break;
 case 95:
    tile = new Tile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-   tile.isSolid = true;
+   tile.isSolid = false;
    break;
 case 96:
    tile = new Tile("lock_blue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
