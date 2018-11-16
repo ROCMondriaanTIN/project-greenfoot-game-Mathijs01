@@ -16,7 +16,18 @@ public class Door extends Mover
     {
         int x = getX();
         int y = getY();
-       
+        
         applyVelocity();
+        for(Actor enemy : getIntersectingObjects(Hero.class))
+        {
+            if (enemy != null)
+            {
+              if(getWorld() instanceof MyWorld) Greenfoot.setWorld(new levelSelector());
+              if(getWorld() instanceof level1) Greenfoot.setWorld(new levelSelector());
+              if(getWorld() instanceof level2) Greenfoot.setWorld(new levelSelector());
+              return;
+            }
+        
+        }
     }    
 }

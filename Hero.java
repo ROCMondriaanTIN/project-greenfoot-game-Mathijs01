@@ -182,7 +182,7 @@ public class Hero extends Mover {
         
     }
     
-       public void level1()
+       /*public void level1()
        
        {
            for(Actor door:getIntersectingObjects(Door.class))
@@ -199,7 +199,7 @@ public class Hero extends Mover {
                }
                break;
            }
-       }
+       }*/
     
 
     public int getWidth() {

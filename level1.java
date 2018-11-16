@@ -73,6 +73,7 @@ int[][] map = {
         addObject(new A(),975,1250);
         addObject(new Door(),2970, 1465);
         addObject(new DoorTop(),2970, 1400);
+        addObject(new ResetButton(),70,70);
         // addObject(new Enemy(), 1250, 770);
         //addObject(new enemy2(), 500, 1370);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -88,7 +89,7 @@ int[][] map = {
         }
         public void prepare()
         {
-         addObject(counter,200, 500);
+         addObject(counter,70, 120);
         }
 
     /*public void getStar()
