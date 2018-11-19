@@ -32,6 +32,7 @@ public class levelSelector extends World
         {
             Greenfoot.setWorld(new MyWorld());
         }
+        
         if(Greenfoot.isKeyDown("1"))
         {
             Greenfoot.setWorld(new level1());
@@ -40,6 +41,11 @@ public class levelSelector extends World
         if(Greenfoot.isKeyDown("2"))
         {
             Greenfoot.setWorld(new level2());
+        }
+        
+        if(Greenfoot.isKeyDown("3"))
+        {
+            Greenfoot.setWorld(new level3());
         }
     }
 
@@ -58,5 +64,7 @@ public class levelSelector extends World
         one.setLocation(317,143);
         Zero zero = new Zero();
         addObject(zero,65,142);
+        three three = new three();
+        addObject(three,831,140);
     }
 }

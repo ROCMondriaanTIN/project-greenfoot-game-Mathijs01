@@ -30,6 +30,7 @@ public class startScherm extends World
         enterButton.setLocation(421,722);
         enterButton.setLocation(426,714);
         enterButton.setLocation(448,722);
+        removeObject(startButton);
     }
 
     public void act()
