@@ -182,6 +182,19 @@ public class Hero extends Mover {
         
     }
     
+ /*   public void getBrownCoin()
+{
+    Actor BrownCoin;
+    BrownCoin = getObjectsInRange(16, BrownCoin.class);
+    if (BrownCoin != null)
+    {
+        World world;
+        world = getWorld();
+        world.removeObject(BrownCoin);
+        addMoney();
+    }
+}*/
+    
        /*public void level1()
        
        {

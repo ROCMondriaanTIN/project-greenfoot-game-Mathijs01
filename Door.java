@@ -14,20 +14,16 @@ public class Door extends Mover
      */
     public void act() 
     {
-        int x = getX();
-        int y = getY();
         
-        applyVelocity();
-        for(Actor enemy : getIntersectingObjects(Hero.class))
+        if(getOneIntersectingObject(Hero.class)!= null && getWorld().getObjects(Key.class).isEmpty())
         {
-            if (enemy != null)
-            {
-              if(getWorld() instanceof MyWorld) Greenfoot.setWorld(new levelSelector());
-              if(getWorld() instanceof level1) Greenfoot.setWorld(new levelSelector());
+            
+              Greenfoot.setWorld(new levelSelector());
+              /*if(getWorld() instanceof level1) Greenfoot.setWorld(new levelSelector());
               if(getWorld() instanceof level2) Greenfoot.setWorld(new levelSelector());
-              return;
-            }
-        
+              if(getWorld() instanceof level3) Greenfoot.setWorld(new levelSelector());*/
+              
         }
+        applyVelocity();
     }    
 }

@@ -22,12 +22,6 @@ public class levelSelector extends World
 
     public void act()
     {
-        click();
-
-    }
-
-    public void click()
-    {
         if(Greenfoot.isKeyDown("0"))
         {
             Greenfoot.setWorld(new MyWorld());
@@ -47,6 +41,7 @@ public class levelSelector extends World
         {
             Greenfoot.setWorld(new level3());
         }
+
     }
 
     /**

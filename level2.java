@@ -61,6 +61,8 @@ public level2()
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 200, 400);
+        addObject(new ResetButton(),70,70);
+        addObject(new A(),628,1035);
        // addObject(BruineMunt, 500,500);
        // addObject(new Enemy(), 1250, 770);
         //addObject(new enemy2(), 500, 1370);

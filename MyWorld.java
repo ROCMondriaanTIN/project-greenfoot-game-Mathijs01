@@ -66,7 +66,8 @@ public class MyWorld extends World {
         addObject(new A(), 800,900);
         addObject(new Door(),2950, 990);
         addObject(new DoorTop(),2950, 930);
-        
+        addObject(new ResetButton(),70,70);
+        addObject(new Key(), 600,900);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
