@@ -8,23 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 */
 public class level1 extends World
 {
-private CollisionEngine ce;
-Counter counter = new Counter();
-public String actieveWereld="level1";
-/**
-* Constructor for objects of class level1.
-* 
-*/
-//private Counter theCounter;
-public level1()
-{    
-// Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-super(1000, 800, 1, false);
-this.setBackground("bg.png");
-//theCounter = new Counter();
-// addObject(theCounter, 0, 0);
-//prepare();
-int[][] map = {
+   private CollisionEngine ce;
+   Counter counter = new Counter();
+   public String actieveWereld="level1";
+    /**
+   * Constructor for objects of class level1.
+  * 
+  */
+    //private Counter theCounter;
+    public level1()
+    {    
+    // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    super(1000, 800, 1, false);
+    this.setBackground("bg.png");
+    //theCounter = new Counter();
+    // addObject(theCounter, 0, 0);
+    //prepare();
+    int[][] map = {
     {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
     {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
     {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -74,6 +74,7 @@ int[][] map = {
         addObject(new Door(),2970, 1465);
         addObject(new DoorTop(),2970, 1400);
         addObject(new ResetButton(),70,70);
+        addObject(new Key(),950, 1300);
         // addObject(new Enemy(), 1250, 770);
         //addObject(new enemy2(), 500, 1370);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -87,10 +88,11 @@ int[][] map = {
         {
             return counter;
         }
-        public void prepare()
-        {
+       public void prepare()
+       {
          addObject(counter,70, 120);
-        }
+       }
+       
 
     /*public void getStar()
     {

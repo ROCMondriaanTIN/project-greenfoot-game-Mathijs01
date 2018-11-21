@@ -1,32 +1,34 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BrownCoin here.
+ * Write a description of class Star here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BrownCoin extends Mover
+public class Star extends Mover
 {
+    Counter counter = new Counter();
     /**
-     * Act - do whatever the BrownCoin wants to do. This method is called whenever
+     * Act - do whatever the Star wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         int x = getX();
         int y = getY();
-        int teller;
-        //Counter counter = new Counter();
         for (Actor enemy : getIntersectingObjects(Hero.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
-                //teller++;
+                //counter.bumpCount(5);
                 break;
             }
         }
         applyVelocity();
-    }
-    
     }    
-
+    /*public void counter()
+    {
+        counter ;
+    }*/
+    
+}
