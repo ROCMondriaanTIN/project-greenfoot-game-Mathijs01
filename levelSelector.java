@@ -41,6 +41,11 @@ public class levelSelector extends World
         {
             Greenfoot.setWorld(new level3());
         }
+        
+        if(Greenfoot.isKeyDown("4"))
+        {
+            Greenfoot.setWorld(new level4());
+        }
 
     }
 
@@ -61,5 +66,7 @@ public class levelSelector extends World
         addObject(zero,65,142);
         three three = new three();
         addObject(three,831,140);
+        four four = new four();
+        addObject(four,64,396);
     }
 }

@@ -14,19 +14,16 @@ public class BrownCoin extends Mover
      */
     public void act() 
     {
-        int x = getX();
-        int y = getY();
-        int teller;
-        //Counter counter = new Counter();
-        for (Actor enemy : getIntersectingObjects(Hero.class)) {
+       Counter BrownCoin = new Counter();
+       for (Actor enemy : getIntersectingObjects(Hero.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
-                //teller++;
-                break;
+                BrownCoin.addScore();
+                return;
             }
         }
-        applyVelocity();
+       applyVelocity();
     }
     
-    }    
+}    
 

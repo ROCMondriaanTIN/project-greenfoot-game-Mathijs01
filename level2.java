@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class level2 extends World
 {
 private CollisionEngine ce;
+Counter counter = new Counter();
 public String actieveWereld="level2";
 /**
  * Constructor for objects of class level2.
@@ -63,6 +64,7 @@ public level2()
         addObject(hero, 200, 400);
         addObject(new ResetButton(),70,70);
         addObject(new A(),628,1035);
+        addObject(counter,70,120);
        // addObject(BruineMunt, 500,500);
        // addObject(new Enemy(), 1250, 770);
         //addObject(new enemy2(), 500, 1370);
@@ -72,6 +74,7 @@ public level2()
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
     }
+    
          @Override
     public void act() {
         ce.update();

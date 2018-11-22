@@ -432,7 +432,7 @@ case 103:
    break;
 case 104:
    tile = new Tile("ropeVertical.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-   tile.isSolid = true;
+   tile.isSolid = false;
    break;
 case 105:
    tile = new Tile("sand.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

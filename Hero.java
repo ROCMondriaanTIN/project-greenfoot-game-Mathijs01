@@ -11,6 +11,9 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     public boolean BrownCoin;
+    public String verzamel = "";
+    public static int coin;
+    public String word = "A";
     int oldY;
     boolean canJump = true;
     //boolean BrownCoin = true;
@@ -43,7 +46,7 @@ public class Hero extends Mover {
     public void act() {
         
         handleInput();
-        
+        addLetter();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -181,6 +184,20 @@ public class Hero extends Mover {
         }
         
     }
+    
+    public String addLetter()
+    {
+       if(isTouching(A.class))
+       {
+           removeTouching(A.class);
+           verzamel +="A";
+           getWorld().showText(verzamel,70,170);
+           coin++;
+       }
+       return verzamel;
+    }
+    
+    
     
  /*   public void getBrownCoin()
 {
