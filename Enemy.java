@@ -45,4 +45,15 @@ public class Enemy extends Mover {
             getImage().mirrorHorizontally();
         }
     }
+    
+    /*public void Hero()
+    {
+        if(isTouching(Enemy.class))
+        {
+            if(getX)
+            {
+                removeTouching(Enemy.class);
+            }
+        }
+    }*/
 }

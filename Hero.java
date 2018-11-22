@@ -197,6 +197,17 @@ public class Hero extends Mover {
        return verzamel;
     }
     
+    /*public void enemy()
+    {
+        if(isTouching(Enemy.class))
+        {
+            if (greenfoot.is)
+            {
+                removeTouching(Enemy.class);
+            }
+        }
+    }*/
+    
     
     
  /*   public void getBrownCoin()

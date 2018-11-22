@@ -22,5 +22,7 @@ public class Counter extends Actor
     {
         score += 100;
     }
+    
+    
    
 }
