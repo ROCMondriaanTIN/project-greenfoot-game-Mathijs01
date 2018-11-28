@@ -34,6 +34,8 @@ public class Hero extends Mover {
     GreenfootImage p1_walk18 = new GreenfootImage("p1_walk18.png");
     
     public int frame = 1;
+    
+    Button button; 
     public Hero() {
         super();
         gravity = 9.8;
@@ -44,6 +46,11 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        deurOpen();
+        if(button ==null) {
+            button = new Button();
+            getWorld().addObject(button, -50, -50);
+        }
         
         handleInput();
         addLetter();
@@ -56,7 +63,14 @@ public class Hero extends Mover {
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                setLocation(500,300);
+                break;
+            }
+        }
+        
+         for (Actor enemy : getIntersectingObjects(Enemy2.class)) {
+            if (enemy != null) {
+                setLocation(500,300);
                 break;
             }
         }
@@ -71,12 +85,17 @@ public class Hero extends Mover {
         if(Greenfoot.isKeyDown("up") == false)  oldY = getY();
         */
     }
-    
     public boolean onGround()
     {
         Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
         Tile tile = (Tile) under;
         return tile != null && tile.isSolid == true;
+    }
+    
+    public void deurOpen() {
+        if(isTouching(Door.class) && button.deurOpen == true) {
+            Greenfoot.setWorld(new levelSelector());
+        }
     }
     
     public void animate()
@@ -201,7 +220,7 @@ public class Hero extends Mover {
     {
         if(isTouching(Enemy.class))
         {
-            if (greenfoot.is)
+            if ()
             {
                 removeTouching(Enemy.class);
             }

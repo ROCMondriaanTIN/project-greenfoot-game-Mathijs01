@@ -80,12 +80,11 @@ public class level4 extends World
         addObject(hero, 28, 1693);
         addObject(new ResetButton(), 50,50);
         addObject(counter,70,120);
-       // addObject(new BrownCoin(),630,2900);
-       // addObject(new A(),69,192);
-        //addObject(new Door(),3536,3445);
-       // addObject(new DoorTop(),3536,3375);
-        //addObject(new Key(),89,3493);
-       // addObject(BruineMunt, 500,500);
+        addObject(new A(),5,373);
+        addObject(new Button(),0,73);
+        addObject(new BrownCoin(),1716,550);
+        addObject(new BrownCoin(),1716,780);
+        addObject(new BrownCoin(),1716,320);
        // addObject(new Enemy(), 1250, 770);
         //addObject(new enemy2(), 500, 1370);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
