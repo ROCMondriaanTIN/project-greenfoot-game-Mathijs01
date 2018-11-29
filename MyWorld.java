@@ -9,6 +9,7 @@ public class MyWorld extends World {
 
     private CollisionEngine ce;
     Counter counter = new Counter();
+    //GreenfootSound backgroundMusic = new GreenfootSound("muziek.mp3");
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -17,6 +18,7 @@ public class MyWorld extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
+       // backgroundMusic.playLoop();
 
         int[][] map = {
 
@@ -61,11 +63,14 @@ public class MyWorld extends World {
         addObject(new BrownCoin(),2000 ,950 );
         addObject(new BrownCoin(),1500 ,950 );
         addObject(new Enemy(), 1350, 950);
-        addObject(new A(), 800,900);
+        addObject(new G(), 800,900);
+        addObject(new A(), 1200,900);
+        addObject(new M(), 1600,900);
+        addObject(new E(), 2100,900);
         addObject(new ResetButton(),70,70);
         addObject(new Button(), 600,985);
         addObject(counter,70,130);
-        addObject(new Coin(),173,973);
+        //addObject(new Coin(),173,973);
         addObject(new Enemy2(), 2700, 1010);
         // addObject(new coin(),200,950);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -73,16 +78,16 @@ public class MyWorld extends World {
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
-        prepare();
+        //prepare();
     }
     
-    private void prepare()
+   /* private void prepare()
     {
 
         Coin coin = new Coin();
         addObject(coin,499,713);
         removeObject(coin);
-    }
+    }*/
         
     @Override
     public void act() {

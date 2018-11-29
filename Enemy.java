@@ -12,6 +12,7 @@ public class Enemy extends Mover {
     private int xMax;
     private boolean firstAct;
     private int speed;
+    
 
     public Enemy() {
         super();
@@ -24,6 +25,8 @@ public class Enemy extends Mover {
 
     @Override
     public void act() {
+        collisionDetection();
+        
         int x = getX();
         int y = getY();
 
@@ -46,15 +49,18 @@ public class Enemy extends Mover {
         }
         
     }
-    
-    /*public void Hero()
+    private void collisionDetection()
     {
-        if(isTouching(Enemy.class))
+        if(getOneObjectAtOffset(-19, -50, Hero.class) !=null || getOneObjectAtOffset(-19, -50,
+        Hero.class) !=null)
         {
-            if();
-            {
-                removeTouching(Enemy.class);
-            }
+            getWorld().removeObject(this);
         }
-    }*/
+        else if(getOneObjectAtOffset(-19, 10, Hero.class) !=null || getOneObjectAtOffset(-19, 10,
+        Hero.class) !=null)
+        {
+            Hero.isDead = true;
+        }
+    }
+  
 }

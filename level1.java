@@ -11,6 +11,7 @@ public class level1 extends World
    private CollisionEngine ce;
    Counter counter = new Counter();
    public String actieveWereld="level1";
+   
     /**
    * Constructor for objects of class level1.
   * 
@@ -21,6 +22,7 @@ public class level1 extends World
     // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
     super(1000, 800, 1, false);
     this.setBackground("bg.png");
+    
     //theCounter = new Counter();
     // addObject(theCounter, 0, 0);
     //prepare();
@@ -73,7 +75,7 @@ public class level1 extends World
         addObject(new A(),975,1250);
         addObject(new ResetButton(),70,70);
         addObject(new Button(),950, 1300);
-        addObject(new Coin(),173,973);
+        //addObject(new Coin(),173,973);
         // addObject(new Enemy(), 1250, 770);
         //addObject(new enemy2(), 500, 1370);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.

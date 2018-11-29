@@ -14,6 +14,8 @@ public class Hero extends Mover {
     public String verzamel = "";
     public static int coin;
     public String word = "A";
+    public boolean deurOpen = false;
+    public static boolean isDead;
     int oldY;
     boolean canJump = true;
     //boolean BrownCoin = true;
@@ -35,6 +37,8 @@ public class Hero extends Mover {
     
     public int frame = 1;
     
+    boolean lever = false;
+    
     Button button; 
     public Hero() {
         super();
@@ -47,6 +51,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         deurOpen();
+        switchLever();
         if(button ==null) {
             button = new Button();
             getWorld().addObject(button, -50, -50);
@@ -91,9 +96,14 @@ public class Hero extends Mover {
         Tile tile = (Tile) under;
         return tile != null && tile.isSolid == true;
     }
+    public void switchLever() {
+        if(isTouching(Button.class)) {
+            lever = true;
+        }
+    }
     
     public void deurOpen() {
-        if(isTouching(Door.class) && button.deurOpen == true) {
+        if(isTouching(Door.class) && lever == true) {
             Greenfoot.setWorld(new levelSelector());
         }
     }
@@ -206,10 +216,31 @@ public class Hero extends Mover {
     
     public String addLetter()
     {
-       if(isTouching(A.class))
+       if(isTouching(G.class))
+       {
+           removeTouching(G.class);
+           verzamel +="G";
+           getWorld().showText(verzamel,70,170);
+           coin++;
+       }
+        if(isTouching(A.class))
        {
            removeTouching(A.class);
            verzamel +="A";
+           getWorld().showText(verzamel,70,170);
+           coin++;
+       }
+        if(isTouching(M.class))
+       {
+           removeTouching(M.class);
+           verzamel +="M";
+           getWorld().showText(verzamel,70,170);
+           coin++;
+       }
+        if(isTouching(E.class))
+       {
+           removeTouching(E.class);
+           verzamel +="E";
            getWorld().showText(verzamel,70,170);
            coin++;
        }

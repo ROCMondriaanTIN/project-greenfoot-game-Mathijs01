@@ -24,7 +24,7 @@ public class levelSelector extends World
     {
         if(Greenfoot.isKeyDown("0"))
         {
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new VraagStartLevel());
         }
         
         if(Greenfoot.isKeyDown("1"))

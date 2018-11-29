@@ -1,4 +1,4 @@
-    import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+   /* import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
     
     /**
      * Write a description of class Coin here.
@@ -6,7 +6,7 @@
      * @author (your name) 
      * @version (a version number or a date)
      */
-    public class Coin extends Mover
+   /* public class Coin extends Mover
     {
         
         GreenfootImage coin1 = new GreenfootImage("coin1.png");
@@ -78,4 +78,4 @@
             }
             applyVelocity();
         }
-}
+}*/
