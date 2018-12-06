@@ -9,7 +9,11 @@ public class MyWorld extends World {
 
     private CollisionEngine ce;
     Counter counter = new Counter();
-    GreenfootSound backgroundMusic = new GreenfootSound("marioSong.mp3");
+    GreenfootSound backgroundMusic = new GreenfootSound("ncMusic.mp3");
+    
+    public String verzamel = "";
+    public static int coin;
+    public String word = "GAME";
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -63,7 +67,12 @@ public class MyWorld extends World {
         addObject(new BrownCoin(),2000 ,950 );
         addObject(new BrownCoin(),1500 ,950 );
         addObject(new Enemy(), 1350, 950);
-        addObject(new G(), 800,900);
+        
+        addObject(new Letter('G'), 800,950);
+        addObject(new Letter('A'), 800, 850);
+
+        
+       // addObject(new G(), 800,950);
         addObject(new A(), 1200,900);
         addObject(new M(), 1600,900);
         addObject(new E(), 2100,900);

@@ -1,5 +1,3 @@
-
-
 import greenfoot.*;
 
 /**
@@ -13,7 +11,7 @@ public class Hero extends Mover {
     public boolean BrownCoin;
     public String verzamel = "";
     public static int coin;
-    public String word = "A";
+    public String word = "GAME";
     public boolean deurOpen = false;
     public static boolean isDead;
     int oldY;
@@ -52,10 +50,11 @@ public class Hero extends Mover {
     public void act() {
         deurOpen();
         switchLever();
-        if(button ==null) {
-            button = new Button();
-            getWorld().addObject(button, -50, -50);
-        }
+        ///MouseInfo mouse =  Greenfoot.getMouseInfo();  
+        // if(button ==null) {
+            // button = new Button();
+            // getWorld().addObject(button, -100, -100);
+        // }
         
         handleInput();
         addLetter();
@@ -89,7 +88,20 @@ public class Hero extends Mover {
         }
         if(Greenfoot.isKeyDown("up") == false)  oldY = getY();
         */
+       
+       TouchingLava();
     }
+    
+    public void aMethod(){
+        System.out.println("ok leuk");
+    }
+    
+    public void TouchingLava() {
+        if(isTouching(LavaTile.class)) {
+            Greenfoot.setWorld(new levelSelector());
+        }
+    }
+    
     public boolean onGround()
     {
         Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
@@ -216,20 +228,20 @@ public class Hero extends Mover {
     
     public String addLetter()
     {
-       if(isTouching(G.class))
+       /*if(Greenfoot.mouseClicked(G.class))
        {
            removeTouching(G.class);
            verzamel +="G";
            getWorld().showText(verzamel,70,170);
            coin++;
        }
-        if(isTouching(A.class))
+       if(isTouching(A.class))
        {
            removeTouching(A.class);
            verzamel +="A";
            getWorld().showText(verzamel,70,170);
            coin++;
-       }
+       }*/
         if(isTouching(M.class))
        {
            removeTouching(M.class);

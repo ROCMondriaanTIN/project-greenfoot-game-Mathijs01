@@ -1,0 +1,308 @@
+
+
+import greenfoot.*;
+
+/**
+ *
+ * @author R. Springer
+ */
+public class Hero extends Mover {
+    private final double gravity;
+    private final double acc;
+    private final double drag;
+    public boolean BrownCoin;
+    public String verzamel = "";
+    public static int coin;
+    public String word = "A";
+    public boolean deurOpen = false;
+    public static boolean isDead;
+    int oldY;
+    boolean canJump = true;
+    //boolean BrownCoin = true;
+    GreenfootImage p1_walk01 = new GreenfootImage("p1_walk01.png"); 
+    GreenfootImage p1_walk02 = new GreenfootImage("p1_walk02.png"); 
+    GreenfootImage p1_walk03 = new GreenfootImage("p1_walk03.png"); 
+    GreenfootImage p1_walk04 = new GreenfootImage("p1_walk04.png"); 
+    GreenfootImage p1_walk05 = new GreenfootImage("p1_walk05.png"); 
+    GreenfootImage p1_walk06 = new GreenfootImage("p1_walk06.png"); 
+    GreenfootImage p1_walk07 = new GreenfootImage("p1_walk07.png"); 
+    GreenfootImage p1_walk08 = new GreenfootImage("p1_walk08.png"); 
+    GreenfootImage p1_walk12 = new GreenfootImage("p1_walk12.png");
+    GreenfootImage p1_walk13 = new GreenfootImage("p1_walk13.png");
+    GreenfootImage p1_walk14 = new GreenfootImage("p1_walk14.png");
+    GreenfootImage p1_walk15 = new GreenfootImage("p1_walk15.png");
+    GreenfootImage p1_walk16 = new GreenfootImage("p1_walk16.png");
+    GreenfootImage p1_walk17 = new GreenfootImage("p1_walk17.png");
+    GreenfootImage p1_walk18 = new GreenfootImage("p1_walk18.png");
+    
+    public int frame = 1;
+    
+    boolean lever = false;
+    
+    Button button; 
+    public Hero() {
+        super();
+        gravity = 9.8;
+        acc = 0.6;
+        drag = 0.8;
+        setImage("p1.png");
+    }
+
+    @Override
+    public void act() {
+        deurOpen();
+        switchLever();
+        if(button ==null) {
+            button = new Button();
+            getWorld().addObject(button, -50, -50);
+        }
+        
+        handleInput();
+        addLetter();
+        velocityX *= drag;
+        velocityY += acc;
+        if (velocityY > gravity) {
+            velocityY = gravity;
+        }
+        applyVelocity();
+
+        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+            if (enemy != null) {
+                setLocation(500,300);
+                break;
+            }
+        }
+        
+         for (Actor enemy : getIntersectingObjects(Enemy2.class)) {
+            if (enemy != null) {
+                setLocation(500,300);
+                break;
+            }
+        }
+        /*
+        if(oldY < getY() || oldY > getY()) {
+            canJump = false;
+        }
+        else
+        {
+            canJump = true;
+        }
+        if(Greenfoot.isKeyDown("up") == false)  oldY = getY();
+        */
+    }
+    public boolean onGround()
+    {
+        Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
+        Tile tile = (Tile) under;
+        return tile != null && tile.isSolid == true;
+    }
+    public void switchLever() {
+        if(isTouching(Button.class)) {
+            lever = true;
+        }
+    }
+    
+    public void deurOpen() {
+        if(isTouching(Door.class) && lever == true) {
+            Greenfoot.setWorld(new levelSelector());
+        }
+    }
+    
+    public void animate()
+    
+    {   
+        if(frame == 1)
+        {
+            setImage(p1_walk01);
+            frame = 2;
+        }
+        else if (frame == 2)
+        {
+            setImage(p1_walk02);
+            frame = 3;
+        }
+         else if (frame == 3)
+        {
+            setImage(p1_walk03);
+            frame = 4;
+        }
+         else if (frame == 4)
+        {
+            setImage(p1_walk04);
+            frame = 5;
+        }
+         else if (frame == 5)
+        {
+            setImage(p1_walk05);
+            frame = 6;
+        }
+         else if (frame == 6)
+        {
+            setImage(p1_walk06);
+            frame = 7;
+        }
+         else if (frame == 7)
+        {
+            setImage(p1_walk07);
+            frame = 8;
+        }
+         else if (frame == 8)
+        {
+            setImage(p1_walk08);
+            frame = 1;
+        }
+    }
+    public void animation()
+    {
+        if(frame == 1)
+        {
+            setImage(p1_walk12);
+            frame = 2;
+        }
+         else if (frame == 2)
+        {
+            setImage(p1_walk13);
+            frame = 3;
+        }
+         else if (frame == 3)
+        {
+            setImage(p1_walk14);
+            frame = 4;
+        }
+         else if (frame == 4)
+        {
+            setImage(p1_walk15);
+            frame = 5;
+        }
+         else if (frame == 5)
+        {
+            setImage(p1_walk16);
+            frame = 6;
+        }
+         else if (frame == 6)
+        {
+            setImage(p1_walk17);
+            frame = 7;
+        }
+         else if (frame == 7)
+        {
+            setImage(p1_walk18);
+            frame = 1;
+        }
+    }
+    
+    public void handleInput() {
+<<<<<<< HEAD
+        if (Greenfoot.isKeyDown("up") && onGround()) {
+            velocityY = -15;
+=======
+        if (Greenfoot.isKeyDown("w")) {
+            velocityY = -20;
+>>>>>>> 4372fff5ea53a9c16ee13c8083969eac7aeee2f9
+        }
+
+        if (Greenfoot.isKeyDown("left")) {
+            velocityX = -5;
+            animation();
+        } else if (Greenfoot.isKeyDown("right")) {
+            velocityX = 5;
+            animate();
+        }
+        else 
+        {
+            
+        }
+        if(Greenfoot.isKeyDown("down"))
+        {
+            setImage("p1_duck.png");
+        }
+        
+    }
+    
+    public String addLetter()
+    {
+       if(isTouching(G.class))
+       {
+           removeTouching(G.class);
+           verzamel +="G";
+           getWorld().showText(verzamel,70,170);
+           coin++;
+       }
+        if(isTouching(A.class))
+       {
+           removeTouching(A.class);
+           verzamel +="A";
+           getWorld().showText(verzamel,70,170);
+           coin++;
+       }
+        if(isTouching(M.class))
+       {
+           removeTouching(M.class);
+           verzamel +="M";
+           getWorld().showText(verzamel,70,170);
+           coin++;
+       }
+        if(isTouching(E.class))
+       {
+           removeTouching(E.class);
+           verzamel +="E";
+           getWorld().showText(verzamel,70,170);
+           coin++;
+       }
+       return verzamel;
+    }
+    
+    /*public void enemy()
+    {
+        if(isTouching(Enemy.class))
+        {
+            if ()
+            {
+                removeTouching(Enemy.class);
+            }
+        }
+    }*/
+    
+    
+    
+ /*   public void getBrownCoin()
+{
+    Actor BrownCoin;
+    BrownCoin = getObjectsInRange(16, BrownCoin.class);
+    if (BrownCoin != null)
+    {
+        World world;
+        world = getWorld();
+        world.removeObject(BrownCoin);
+        addMoney();
+    }
+}*/
+    
+       /*public void level1()
+       
+       {
+           for(Actor door:getIntersectingObjects(Door.class))
+           {
+               if(BrownCoin==true)
+               {
+                   if (door == null)
+                   {
+                        Greenfoot.setWorld(new level2());
+                       String ActieveWereld="level2";
+                       return;
+                       
+                    }
+               }
+               break;
+           }
+       }*/
+    
+
+    public int getWidth() {
+        return getImage().getWidth();
+    }
+
+    public int getHeight() {
+        return getImage().getHeight();
+    }
+}
