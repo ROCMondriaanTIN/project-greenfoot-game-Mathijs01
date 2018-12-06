@@ -57,7 +57,7 @@ public class Hero extends Mover {
         // }
         
         handleInput();
-        addLetter();
+        //addLetter();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -90,11 +90,13 @@ public class Hero extends Mover {
         */
        
        TouchingLava();
+      // TouchingWater();
+       getWorld().showText(verzamel,70,170);
     }
     
-    public void aMethod(){
+    /*public void aMethod(){
         System.out.println("ok leuk");
-    }
+    }*/
     
     public void TouchingLava() {
         if(isTouching(LavaTile.class)) {
@@ -204,14 +206,15 @@ public class Hero extends Mover {
     }
     
     public void handleInput() {
-        if (Greenfoot.isKeyDown("up") && onGround()) {
+        if (Greenfoot.isKeyDown("w") && onGround()) {
             velocityY = -15;
+            setImage("p1_jump.png");
         }
 
-        if (Greenfoot.isKeyDown("left")) {
+        if (Greenfoot.isKeyDown("a")) {
             velocityX = -5;
             animation();
-        } else if (Greenfoot.isKeyDown("right")) {
+        } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 5;
             animate();
         }
@@ -219,92 +222,13 @@ public class Hero extends Mover {
         {
             
         }
-        if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("s"))
         {
             setImage("p1_duck.png");
         }
         
     }
     
-    public String addLetter()
-    {
-       /*if(Greenfoot.mouseClicked(G.class))
-       {
-           removeTouching(G.class);
-           verzamel +="G";
-           getWorld().showText(verzamel,70,170);
-           coin++;
-       }
-       if(isTouching(A.class))
-       {
-           removeTouching(A.class);
-           verzamel +="A";
-           getWorld().showText(verzamel,70,170);
-           coin++;
-       }*/
-        if(isTouching(M.class))
-       {
-           removeTouching(M.class);
-           verzamel +="M";
-           getWorld().showText(verzamel,70,170);
-           coin++;
-       }
-        if(isTouching(E.class))
-       {
-           removeTouching(E.class);
-           verzamel +="E";
-           getWorld().showText(verzamel,70,170);
-           coin++;
-       }
-       return verzamel;
-    }
-    
-    /*public void enemy()
-    {
-        if(isTouching(Enemy.class))
-        {
-            if ()
-            {
-                removeTouching(Enemy.class);
-            }
-        }
-    }*/
-    
-    
-    
- /*   public void getBrownCoin()
-{
-    Actor BrownCoin;
-    BrownCoin = getObjectsInRange(16, BrownCoin.class);
-    if (BrownCoin != null)
-    {
-        World world;
-        world = getWorld();
-        world.removeObject(BrownCoin);
-        addMoney();
-    }
-}*/
-    
-       /*public void level1()
-       
-       {
-           for(Actor door:getIntersectingObjects(Door.class))
-           {
-               if(BrownCoin==true)
-               {
-                   if (door == null)
-                   {
-                        Greenfoot.setWorld(new level2());
-                       String ActieveWereld="level2";
-                       return;
-                       
-                    }
-               }
-               break;
-           }
-       }*/
-    
-
     public int getWidth() {
         return getImage().getWidth();
     }

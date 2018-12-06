@@ -72,7 +72,7 @@ public class level1 extends World
         addObject(camera, 0, 0);
         addObject(hero, 200, 400);
         addObject(new BrownCoin(), 900,1300);
-        addObject(new A(),975,1250);
+       
         addObject(new ResetButton(),70,70);
         addObject(new Button(),950, 1350);
         //addObject(new Coin(),173,973);

@@ -23,22 +23,19 @@ public class startScherm extends World
     
     private void prepare()
     {
+
         EnterButton enterButton = new EnterButton();
-        addObject(enterButton,460,709);
-        StartButton startButton = new StartButton();
-        addObject(startButton,463,391);
-        enterButton.setLocation(421,722);
-        enterButton.setLocation(426,714);
-        enterButton.setLocation(448,722);
-        removeObject(startButton);
+        addObject(enterButton,916,710);
+        Personage personage = new Personage();
+        addObject(personage,31,754);
     }
 
     public void act()
     {
-        if(Greenfoot.isKeyDown("enter"))
+        /*if(Greenfoot.isKeyDown("enter"))
         Greenfoot.setWorld(new levelSelector());
         
-        /*if(Greenfoot.isKeyDown(""))
+        if(Greenfoot.isKeyDown(""))
         Greenfoot.setWorld(new level1());
         
         if(Greenfoot.isKeyDown(""))

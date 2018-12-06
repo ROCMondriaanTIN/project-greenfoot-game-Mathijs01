@@ -26,9 +26,5 @@ public class Star extends Mover
         }
         applyVelocity();
     }    
-    /*public void counter()
-    {
-        counter ;
-    }*/
     
 }

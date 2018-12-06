@@ -35,10 +35,6 @@ public class Letter extends Mover
            {
            Hero h = (Hero)hero;
            h.verzamel += letter;
-            //removeTouching(G.class);
-           // verzamel +="G";
-            //getWorld().showText(verzamel,70,170);
-           //coin++;
            
            getWorld().removeObject(this);
            }

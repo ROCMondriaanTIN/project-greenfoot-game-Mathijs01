@@ -67,15 +67,13 @@ public class MyWorld extends World {
         addObject(new BrownCoin(),2000 ,950 );
         addObject(new BrownCoin(),1500 ,950 );
         addObject(new Enemy(), 1350, 950);
+        addObject(new Coin(),2600, 950);
         
-        addObject(new Letter('G'), 800,950);
-        addObject(new Letter('A'), 800, 850);
-
-        
-       // addObject(new G(), 800,950);
-        addObject(new A(), 1200,900);
-        addObject(new M(), 1600,900);
-        addObject(new E(), 2100,900);
+        addObject(new Letter('G'), 500 ,950);
+        addObject(new Letter('A'), 700, 950);
+        addObject(new Letter('M'), 1000, 850);
+        addObject(new Letter('E'), 1750, 950);
+       
         addObject(new ResetButton(),70,70);
         addObject(new Button(), 600,985);
         addObject(counter,70,130);

@@ -104,7 +104,7 @@ Counter counter = new Counter();
         addObject(hero, 139, 3313);
         addObject(new ResetButton(), 50,50);
         addObject(new BrownCoin(),630,2900);
-        addObject(new A(),69,192);
+       
         addObject(new Button(),89,3493);
         addObject(counter,70,120);
        // addObject(BruineMunt, 500,500);

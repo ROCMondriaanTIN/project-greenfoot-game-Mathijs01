@@ -63,7 +63,6 @@ public level2()
         addObject(camera, 0, 0);
         addObject(hero, 200, 400);
         addObject(new ResetButton(),70,70);
-        addObject(new A(),628,1035);
         addObject(counter,70,120);
        // addObject(BruineMunt, 500,500);
        // addObject(new Enemy(), 1250, 770);
