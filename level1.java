@@ -23,6 +23,7 @@ public class level1 extends World
     super(1000, 800, 1, false);
     this.setBackground("bg.png");
     
+
     //theCounter = new Counter();
     // addObject(theCounter, 0, 0);
     //prepare();
@@ -74,7 +75,7 @@ public class level1 extends World
         addObject(new BrownCoin(), 900,1300);
        
         addObject(new ResetButton(),70,70);
-        addObject(new Button(),950, 1350);
+        addObject(new Button(),950, 1345);
         //addObject(new Coin(),173,973);
         // addObject(new Enemy(), 1250, 770);
         //addObject(new enemy2(), 500, 1370);

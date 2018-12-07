@@ -78,10 +78,11 @@ public class level4 extends World
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 28, 1693);
+        addObject(new Button(),0,90);
         addObject(new ResetButton(), 50,50);
         addObject(counter,70,120);
        
-        addObject(new Button(),0,90);
+        
         addObject(new BrownCoin(),1716,550);
         addObject(new BrownCoin(),1716,780);
         addObject(new BrownCoin(),1716,320);

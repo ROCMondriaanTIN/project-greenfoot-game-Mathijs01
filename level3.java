@@ -105,7 +105,7 @@ Counter counter = new Counter();
         addObject(new ResetButton(), 50,50);
         addObject(new BrownCoin(),630,2900);
        
-        addObject(new Button(),89,3493);
+        addObject(new Button(),89,3505);
         addObject(counter,70,120);
        // addObject(BruineMunt, 500,500);
        // addObject(new Enemy(), 1250, 770);

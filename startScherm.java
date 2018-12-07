@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class startScherm extends World
 {
-
+    GreenfootSound backgroundMusic = new GreenfootSound("ncMusic.mp3");
     /**
      * Constructor for objects of class startScherm.
      * 
@@ -17,7 +17,8 @@ public class startScherm extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
          super(1000, 800, 1, false);
-         
+         backgroundMusic.playLoop();
+
          prepare();
     }
     
@@ -28,6 +29,7 @@ public class startScherm extends World
         addObject(enterButton,916,710);
         Personage personage = new Personage();
         addObject(personage,31,754);
+        enterButton.setLocation(929,739);
     }
 
     public void act()

@@ -9,7 +9,7 @@ public class MyWorld extends World {
 
     private CollisionEngine ce;
     Counter counter = new Counter();
-    GreenfootSound backgroundMusic = new GreenfootSound("ncMusic.mp3");
+   // GreenfootSound backgroundMusic = new GreenfootSound("ncMusic.mp3");
     
     public String verzamel = "";
     public static int coin;
@@ -22,7 +22,7 @@ public class MyWorld extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
-        backgroundMusic.playLoop();
+       // backgroundMusic.playLoop();
 
         int[][] map = {
 
