@@ -29,24 +29,24 @@ public class levelSelector extends World
        
         if(Greenfoot.isKeyDown("1"))
         {
-            Greenfoot.setWorld(new level1());
+            Greenfoot.setWorld(new VraagLevel1());
         }
         
         
         if(Greenfoot.isKeyDown("2"))
         {
-            Greenfoot.setWorld(new level2());
+            Greenfoot.setWorld(new VraagLevel2());
         }
         
         
         if(Greenfoot.isKeyDown("3"))
         {
-            Greenfoot.setWorld(new level3());
+            Greenfoot.setWorld(new VraagLevel3());
         }
        
         if(Greenfoot.isKeyDown("4"))
         {
-            Greenfoot.setWorld(new level4());
+            Greenfoot.setWorld(new VraagLevel4());
         }
        
     }

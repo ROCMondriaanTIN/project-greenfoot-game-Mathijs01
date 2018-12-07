@@ -1,22 +1,23 @@
-
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- *
- * @author R. Springer
+ * Write a description of class enemy2 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Enemy extends Mover {
-
+public class Enemy3 extends Mover
+{
+    
     private int walkRange;
     private int xMin;
     private int xMax;
     private boolean firstAct;
     private int speed;
-    
 
-    public Enemy() {
+    public Enemy3() {
         super();
-        setImage("pokerMad.png");
+        setImage("flyFly1.png");
         getImage().mirrorHorizontally();
         walkRange = 100;
         firstAct = true;
@@ -25,8 +26,6 @@ public class Enemy extends Mover {
 
     @Override
     public void act() {
-       // collisionDetection();
-        
         int x = getX();
         int y = getY();
 
@@ -47,25 +46,12 @@ public class Enemy extends Mover {
             x = xMin;
             getImage().mirrorHorizontally();
         }
-        if(getOneObjectAtOffset(-19, -90, Hero.class) != null ||
-        getOneObjectAtOffset(19, -90, Hero.class) != null)
+        if(getOneObjectAtOffset(-19, -45, Hero.class) != null ||
+        getOneObjectAtOffset(19, -45, Hero.class) != null)
         {
             getWorld().removeObject(this);
         }
         
     }
-   /* private void collisionDetection()
-    {
-        if(getOneObjectAtOffset(-19, -50, Hero.class) !=null || getOneObjectAtOffset(-19, -50,
-        Hero.class) !=null)
-        {
-            getWorld().removeObject(this);
-        }
-        else if(getOneObjectAtOffset(-19, 10, Hero.class) !=null || getOneObjectAtOffset(-19, 10,
-        Hero.class) !=null)
-        {
-            Hero.isDead = true;
-        }
-    }*/
-  
 }
+

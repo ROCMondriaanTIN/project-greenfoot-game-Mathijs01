@@ -46,6 +46,12 @@ public class Enemy2 extends Mover
             x = xMin;
             getImage().mirrorHorizontally();
         }
+        if(getOneObjectAtOffset(-19, -45, Hero.class) != null ||
+        getOneObjectAtOffset(19, -45, Hero.class) != null)
+        {
+            getWorld().removeObject(this);
+        }
+        
     }
 }
 

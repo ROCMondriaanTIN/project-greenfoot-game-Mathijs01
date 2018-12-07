@@ -13,7 +13,7 @@ public class Letter extends Mover
     public static int coin;
     
     public Letter(char karakter){
-        System.out.println(karakter + ".png");
+        //System.out.println(karakter + ".png");
         letter = karakter;
         setImage("letter_" + karakter + ".png");
     }

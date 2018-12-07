@@ -73,9 +73,17 @@ public class level1 extends World
         addObject(camera, 0, 0);
         addObject(hero, 200, 400);
         addObject(new BrownCoin(), 900,1300);
-       
+        addObject(new Enemy3(),1654, 950);
         addObject(new ResetButton(),70,70);
         addObject(new Button(),950, 1345);
+        
+        addObject(new Letter('s'), 500 ,950);
+        addObject(new Letter('C'), 500 ,950);
+        addObject(new Letter('G'), 500 ,950);
+        addObject(new Letter('G'), 500 ,950);
+        addObject(new Letter('G'), 500 ,950);
+        addObject(new Letter('G'), 500 ,950);
+        
         //addObject(new Coin(),173,973);
         // addObject(new Enemy(), 1250, 770);
         //addObject(new enemy2(), 500, 1370);
