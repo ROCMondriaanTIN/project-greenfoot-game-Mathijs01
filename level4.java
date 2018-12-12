@@ -81,8 +81,13 @@ public class level4 extends World
         addObject(new Button(),0,90);
         addObject(new ResetButton(), 50,50);
         addObject(counter,70,120);
-       
         
+        addObject(new Letter('C'), 50,1693);
+        addObject(new Letter('I'), 1584,1033);
+        addObject(new Letter('T'), 60,374);
+        addObject(new Letter('Y'), 1323,1693);
+       
+        addObject(new Coin(),577,973);
         addObject(new BrownCoin(),1716,550);
         addObject(new BrownCoin(),1716,780);
         addObject(new BrownCoin(),1716,320);

@@ -89,8 +89,8 @@ public class Hero extends Mover {
         if(Greenfoot.isKeyDown("up") == false)  oldY = getY();
         */
        
-       TouchingLava();
-      // TouchingWater();
+      TouchingLava();
+      TouchingWater();
        getWorld().showText(verzamel,70,170);
     }
     
@@ -103,12 +103,24 @@ public class Hero extends Mover {
             Greenfoot.setWorld(new levelSelector());
         }
     }
+     public void TouchingWater() {
+        if(isTouching(WaterTile.class)) {
+            Greenfoot.setWorld(new levelSelector());
+        }
+    }
     
     public boolean onGround()
     {
-        Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
+         Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Tile tile1 = (Tile) underLeft;
+        Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Tile tile2 = (Tile) underRight;
+
+        return (tile1 != null && tile1.isSolid) || (tile2 != null && tile2.isSolid);
+        
+        /*Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
         Tile tile = (Tile) under;
-        return tile != null && tile.isSolid == true;
+        return tile != null && tile.isSolid == true;*/
     }
     public void switchLever() {
         if(isTouching(Button.class)) {
@@ -217,6 +229,7 @@ public class Hero extends Mover {
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 5;
             animate();
+            
         }
         else 
         {

@@ -22,11 +22,11 @@ public class VraagLevel5 extends World
     public void act(){
     if(Greenfoot.isKeyDown("enter"))
         {
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new level5());
         }
     else if (Greenfoot.mouseClicked(this))
     {
-        Greenfoot.setWorld(new MyWorld());
+        Greenfoot.setWorld(new level5());
     }
     }
 }

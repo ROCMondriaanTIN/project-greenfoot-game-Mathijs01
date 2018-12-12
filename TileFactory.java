@@ -516,19 +516,19 @@ case 124:
    break;
 case 125:
    tile = new Tile("sign.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-   tile.isSolid = true;
+   tile.isSolid = false;
    break;
 case 126:
    tile = new Tile("signExit.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-   tile.isSolid = true;
+   tile.isSolid = false;
    break;
 case 127:
    tile = new Tile("signLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-   tile.isSolid = true;
+   tile.isSolid = false;
    break;
 case 128:
    tile = new Tile("signRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-   tile.isSolid = true;
+   tile.isSolid = false;
    break;
 case 129:
    tile = new Tile("snow.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -701,12 +701,15 @@ case 170:
 case 171:
    tile = new Tile("window.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
    tile.isSolid = true;
+   case 172:
+   tile = new Tile("chain.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+   tile.isSolid = false;
    break;
-            default:
-                tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                tile.isSolid = true;
+   default:
+   tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+   tile.isSolid = true;
                 break;
-        }
+}
         return tile;
     }
 }

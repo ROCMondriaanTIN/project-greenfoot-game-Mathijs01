@@ -6,11 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author R. Springer
  */
 public class MyWorld extends World {
-
+   // GreenfootSound backgroundMusic = new GreenfootSound("LDGSOUND.mp3");
+   //GreenfootSound("LDGSOUND.mp3");
     private CollisionEngine ce;
     Counter counter = new Counter();
-   // GreenfootSound backgroundMusic = new GreenfootSound("ncMusic.mp3");
+    GreenfootSound backgroundMusic = new GreenfootSound("ncMusic.mp3");
     
+    private GreenfootSound MySound;
+    public boolean soundHasPlayed;
     public String verzamel = "";
     public static int coin;
     public String word = "GAME";
@@ -22,7 +25,7 @@ public class MyWorld extends World {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
-       // backgroundMusic.playLoop();
+        backgroundMusic.playLoop();
 
         int[][] map = {
 
@@ -86,7 +89,14 @@ public class MyWorld extends World {
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
         //prepare();
+        
+      
     }
+    
+    /*public void play()
+    {
+          GreenfootSound backgroundMusic = new GreenfootSound("LDGSOUND.mp3");
+    }*/
     
    /* private void prepare()
     {

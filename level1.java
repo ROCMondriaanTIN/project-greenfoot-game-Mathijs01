@@ -77,12 +77,12 @@ public class level1 extends World
         addObject(new ResetButton(),70,70);
         addObject(new Button(),950, 1345);
         
-        addObject(new Letter('s'), 500 ,950);
-        addObject(new Letter('C'), 500 ,950);
-        addObject(new Letter('G'), 500 ,950);
-        addObject(new Letter('G'), 500 ,950);
-        addObject(new Letter('G'), 500 ,950);
-        addObject(new Letter('G'), 500 ,950);
+        addObject(new Letter('S'), 980,1240);
+        addObject(new Letter('C'), 1884 ,1033);
+        addObject(new Letter('H'), 1413 ,1033);
+        addObject(new Letter('O'), 1236 ,1393);
+        addObject(new Letter('O'), 2063 ,1213);
+        addObject(new Letter('L'), 2879 ,1453);
         
         //addObject(new Coin(),173,973);
         // addObject(new Enemy(), 1250, 770);
